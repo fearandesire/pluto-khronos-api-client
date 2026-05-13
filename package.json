@@ -1,0 +1,43 @@
+{
+  "name": "pluto-khronos-api-client",
+  "version": "0.1.0",
+  "description": "Generated TypeScript client for the Khronos API used by Pluto.",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "generate": "openapi --input ./openapi/khronos.openapi.yaml --output ./src/generated --client fetch",
+    "build": "npm run generate && tsc --project ./tsconfig.json",
+    "test": "npm run build && node --test",
+    "prepack": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fearandesire/pluto-khronos-api-client.git"
+  },
+  "keywords": [
+    "khronos",
+    "openapi",
+    "typescript",
+    "api-client"
+  ],
+  "author": "",
+  "license": "GPL-2.0-only",
+  "bugs": {
+    "url": "https://github.com/fearandesire/pluto-khronos-api-client/issues"
+  },
+  "homepage": "https://github.com/fearandesire/pluto-khronos-api-client#readme",
+  "devDependencies": {
+    "openapi-typescript-codegen": "0.30.0",
+    "typescript": "6.0.3"
+  }
+}
